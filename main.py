@@ -15,7 +15,8 @@ from youtube import get_resolutions, download_video
 
 load_dotenv()
 
-TOKEN = os.getenv("BOT_TOKEN")
+TOKEN = "8168394361:AAHO-V1bqMutW-DZrSUW5d0wgMm6_MSOS88"
+
 
 dp = Dispatcher()
 user_links = {}  # user_id : youtube link
