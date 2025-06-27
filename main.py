@@ -341,8 +341,7 @@ async def download_callback(client: Client, callback_query: CallbackQuery):
                     f"⬇️ **Downloading {selected_quality}**\n\n"
                     f"📊 Progress: {percent}\n"
                     f"🚀 Speed: {speed}\n"
-                    f"⏳ Please wait...",
-                    parse_mode="markdown"
+                    f"⏳ Please wait..."
                 )
                 current_progress["last_update"] = current_time
             except:
@@ -352,8 +351,7 @@ async def download_callback(client: Client, callback_query: CallbackQuery):
     await callback_query.edit_message_text(
         f"⬇️ **Starting download...**\n\n"
         f"Quality: {selected_quality}\n"
-        f"🔄 Initializing download...",
-        parse_mode="markdown"
+        f"🔄 Initializing download..."
     )
     
     file_path = await downloader.download_video(url, quality, progress_callback=update_progress)
@@ -373,8 +371,7 @@ async def download_callback(client: Client, callback_query: CallbackQuery):
         f"📁 **File:** {filename[:50]}{'...' if len(filename) > 50 else ''}\n"
         f"📊 **Size:** {file_size_mb:.1f}MB\n"
         f"🚀 **Using MTProto** (No size limits!)\n\n"
-        f"⏳ Upload in progress...",
-        parse_mode="markdown"
+        f"⏳ Upload in progress..."
     )
     
     # Upload progress callback
@@ -386,8 +383,7 @@ async def download_callback(client: Client, callback_query: CallbackQuery):
                 f"📁 **File:** {filename[:50]}{'...' if len(filename) > 50 else ''}\n"
                 f"📊 **Size:** {file_size_mb:.1f}MB\n"
                 f"📈 **Upload Progress:** {percent:.1f}%\n"
-                f"🚀 **Using MTProto** (No size limits!)",
-                parse_mode="markdown"
+                f"🚀 **Using MTProto** (No size limits!)"
             )
         except:
             pass
@@ -407,7 +403,6 @@ async def download_callback(client: Client, callback_query: CallbackQuery):
                 chat_id=callback_query.message.chat.id,
                 audio=file_path,
                 caption=caption,
-                parse_mode="markdown",
                 progress=upload_progress
             )
         else:
@@ -415,7 +410,6 @@ async def download_callback(client: Client, callback_query: CallbackQuery):
                 chat_id=callback_query.message.chat.id,
                 video=file_path,
                 caption=caption,
-                parse_mode="markdown",
                 progress=upload_progress
             )
         
@@ -424,7 +418,6 @@ async def download_callback(client: Client, callback_query: CallbackQuery):
             f"File uploaded successfully!\n"
             f"Size: {file_size_mb:.1f}MB\n\n"
             f"Send me another YouTube link to download more videos! 🎥",
-            parse_mode="markdown"
         )
         
     except Exception as e:
@@ -437,8 +430,7 @@ async def download_callback(client: Client, callback_query: CallbackQuery):
             f"• Network issues\n"
             f"• Temporary server problems\n"
             f"• File corruption\n\n"
-            f"Please try again.",
-            parse_mode="markdown"
+            f"Please try again."
         )
     
     finally:
