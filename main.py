@@ -168,7 +168,7 @@ Welcome! I can download YouTube videos of ANY size using MTProto.
 Just send me a YouTube link to get started! 🚀
     """
     
-    await message.reply_text(welcome_message, parse_mode="markdown")
+    await message.reply_text(welcome_message)
 
 @app.on_message(filters.command("help"))
 async def help_command(client: Client, message: Message):
@@ -210,7 +210,7 @@ async def help_command(client: Client, message: Message):
 This bot uses MTProto library (Pyrogram) instead of Bot API, which removes Telegram's file size restrictions for bots.
     """
     
-    await message.reply_text(help_text, parse_mode="markdown")
+    await message.reply_text(help_text)
 
 @app.on_message(filters.text & filters.regex(r'(youtube\.com|youtu\.be)'))
 async def handle_youtube_url(client: Client, message: Message):
@@ -291,7 +291,7 @@ async def handle_youtube_url(client: Client, message: Message):
     app.user_data = getattr(app, 'user_data', {})
     app.user_data[f"url_{message.id}"] = url
     
-    await status_msg.edit_text(info_text, reply_markup=reply_markup, parse_mode="markdown")
+    await status_msg.edit_text(info_text, reply_markup=reply_markup)
 
 @app.on_callback_query(filters.regex(r"^dl_"))
 async def download_callback(client: Client, callback_query: CallbackQuery):
