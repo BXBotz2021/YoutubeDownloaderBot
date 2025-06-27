@@ -16,9 +16,9 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Bot credentials - Replace with your actual credentials
-API_ID = "YOUR_API_ID"  # Get from https://my.telegram.org
-API_HASH = "YOUR_API_HASH"  # Get from https://my.telegram.org
-BOT_TOKEN = "YOUR_BOT_TOKEN"  # Get from @BotFather
+API_ID = "7813390"  # Get from https://my.telegram.org
+API_HASH = "1faadd9cc60374bca1e88c2f44e3ee2f"  # Get from https://my.telegram.org
+BOT_TOKEN = "7594234544:AAEqQ2R5HsDsLVEABcNBPDDjJqDyZPRYods"  # Get from @BotFather
 
 class YouTubeDownloader:
     def __init__(self):
